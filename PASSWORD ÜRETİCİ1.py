@@ -31,6 +31,7 @@ def password_butonu() :
     random.shuffle(password)
     lbl["text"] = "".join(password)
     lbl["font"] = "Times 25 bold"
+    del password[0:]
 
 Button(pencere ,
         text = "PASSWORD OLUŞTUR" ,
@@ -40,7 +41,8 @@ Button(pencere ,
 lbl = Label(pencere)
 lbl.pack()
 
-lbl["text"] = " "
+lbl["text"] = "MİNİMUM 4 HARFLİ"
+lbl["font"] = "Times 25 bold"
 lbl["bg"] = "Grey"
 
 pencere.mainloop()

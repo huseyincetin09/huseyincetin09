@@ -20,17 +20,19 @@ def password_butonu() :
     isaret2 = random.choice(isaretler)
     password = [sayi1 , sayi2 , buyukharf1 , buyukharf2 , kucukharf1 , kucukharf2 , isaret1 , isaret2]
     random.shuffle(password)
-    lbl["text"] = f"\n\n\nOLUŞTURULAN PASSWORD: {password[0]}{password[1]}{password[2]}{password[3]}{password[4]}{password[5]}{password[6]}{password[7]}"
+    lbl["text"] = f"\nOLUŞTURULAN PASSWORD: {password[0]}{password[1]}{password[2]}{password[3]}{password[4]}{password[5]}{password[6]}{password[7]}"
     lbl["font"] = "Times 25 bold"
     lbl["bg"] = "Grey"
 
 Button(pencere ,
         text = "PASSWORD OLUŞTUR" ,
         font = "Times 25 bold" ,
-        command = password_butonu).place(x = 200 , y = 20)
-
+        command = password_butonu).pack()
 
 lbl = Label(pencere)
 lbl.pack()
+
+lbl["text"] = " "
+lbl["bg"] = "Grey"
 
 pencere.mainloop()

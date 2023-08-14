@@ -32,7 +32,7 @@ Button(pencere ,
 lbl = Label(pencere)
 lbl.pack()
 
-lbl["text"] = "  "
+lbl["text"] = " "
 lbl["bg"] = "Grey"
 
 pencere.mainloop()

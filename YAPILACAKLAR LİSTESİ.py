@@ -29,6 +29,7 @@ def eleman_silme() :
         messagebox.showinfo("BAŞARILI" , "Eleman başarıyla silindi!")
 
 def liste_goster() :
+    liste_kutusu.delete(0 , END)
     eleman_sayisi = len(yapilacaklar)
     x = 0
     for i in range(eleman_sayisi) :

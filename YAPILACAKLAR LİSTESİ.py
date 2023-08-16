@@ -18,7 +18,6 @@ def eleman_ekleme() :
         messagebox.showerror("HATA" , "Bu eleman zaten mevcut!")
     else :
         yapilacaklar.append(eklenecek_eleman)
-        messagebox.showinfo("BAŞARILI" , "Eleman başarıyla eklendi!")
         
 def eleman_silme() :
     silinecek_eleman = simpledialog.askstring("ELEMAN SİL" , "Silinecek eleman:")
@@ -26,7 +25,6 @@ def eleman_silme() :
         messagebox.showerror("HATA" , "Bu eleman zaten mevcut değil!")
     else :
         yapilacaklar.remove(silinecek_eleman)
-        messagebox.showinfo("BAŞARILI" , "Eleman başarıyla silindi!")
 
 def liste_goster() :
     liste_kutusu.delete(0 , END)

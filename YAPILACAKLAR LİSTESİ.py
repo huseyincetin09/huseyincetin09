@@ -33,6 +33,7 @@ def liste_goster() :
     x = 0
     for i in range(eleman_sayisi) :
         liste_kutusu.insert(x , f"{yapilacaklar[x]}")
+        x = x + 1
 
 Button(pencere ,
        text = "ELEMAN EKLE" ,

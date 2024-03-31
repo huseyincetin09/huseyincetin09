@@ -45,7 +45,7 @@ void loop()
   }
   else{
     digitalWrite(depoMotor, LOW);
-  	digitalWrite(muslukMotor, HIGH);
+    digitalWrite(muslukMotor, HIGH);
   }
   
   veri = digitalRead(toprakSensor);
@@ -53,6 +53,6 @@ void loop()
     digitalWrite(bahceMotor, HIGH);
   }
   else{
-  	digitalWrite(bahceMotor, LOW);
+    digitalWrite(bahceMotor, LOW);
   }
 }

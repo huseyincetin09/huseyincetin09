@@ -1,5 +1,8 @@
 #include <LiquidCrystal.h>
 
+int veri;
+int toprakSensor = 6;
+int bahceMotor = 7;
 int potPin = A1;
 int potDeger = 0;
 float istSicaklik = 0;
@@ -12,6 +15,8 @@ LiquidCrystal lcd_1(12, 11, 5, 4, 3, 2);
 
 void setup() 
 {
+  pinMode(toprakSensor, INPUT);
+  pinMode(bahceMotor, OUTPUT);
   Serial.begin(9600);
   lcd_1.begin(16, 2);
   lcd_1.print("SICAKLIK: ");
@@ -31,4 +36,12 @@ void loop()
   lcd_1.print("HEDEF: ");
   lcd_1.setCursor(10, 1);
   lcd_1.print(istSicaklik);
+  
+  veri = digitalRead(toprakSensor);
+  if(veri == true){
+    digitalWrite(bahceMotor, HIGH);
+  }
+  else{
+  	digitalWrite(bahceMotor, LOW);
+  }
 }

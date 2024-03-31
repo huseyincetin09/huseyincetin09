@@ -40,7 +40,7 @@ void loop()
   lcd_1.print(istSicaklik);
   
   if(sicaklik < istSicaklik){
-  	digitalWrite(depoMotor, HIGH);
+    digitalWrite(depoMotor, HIGH);
     digitalWrite(muslukMotor, LOW);
   }
   else{

@@ -1,6 +1,8 @@
 #include <LiquidCrystal.h>
 
 int veri;
+int muslukMotor = 8;
+int depoMotor = 9;
 int toprakSensor = 6;
 int bahceMotor = 7;
 int potPin = A1;
@@ -36,6 +38,15 @@ void loop()
   lcd_1.print("HEDEF: ");
   lcd_1.setCursor(10, 1);
   lcd_1.print(istSicaklik);
+  
+  if(sicaklik < istSicaklik){
+  	digitalWrite(depoMotor, HIGH);
+    digitalWrite(muslukMotor, LOW);
+  }
+  else{
+    digitalWrite(depoMotor, LOW);
+  	digitalWrite(muslukMotor, HIGH);
+  }
   
   veri = digitalRead(toprakSensor);
   if(veri == true){

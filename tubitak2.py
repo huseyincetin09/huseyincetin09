@@ -1,5 +1,8 @@
 import cv2
 from cvzone.HandTrackingModule import HandDetector
+import serial
+
+ser = serial.Serial('COM3',9600,timeout=1)
 
 class Buton:
     def __init__(self,konum,genislik,yukseklik,deger):
@@ -183,6 +186,7 @@ while True:
                 gecikmeSayaci += 1
         elif (1125<x_ekseni<1250) and (0<y_ekseni<100) :
             butongiris.klikKontrol(x_ekseni,y_ekseni)
+            ser.write(b'a')
         else :
             pass
 

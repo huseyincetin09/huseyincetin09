@@ -1,6 +1,7 @@
 import cv2
-from cvzone.HandTrackingModule import HandDetector
 import serial
+from tkinter import messagebox
+from cvzone.HandTrackingModule import HandDetector
 
 ser = serial.Serial('COM3',9600,timeout=1)
 
@@ -186,7 +187,36 @@ while True:
                 gecikmeSayaci += 1
         elif (1125<x_ekseni<1250) and (0<y_ekseni<100) :
             butongiris.klikKontrol(x_ekseni,y_ekseni)
-            ser.write(b'a')
+            sayimiz = int(sayi)
+            if sayimiz%2 == 0 :  
+                ser.write(b'a')
+            elif sayimiz%3 == 0 :
+                ser.write(b'b')
+            elif sayimiz%5 == 0 :
+                ser.write(b'c')
+            elif sayimiz%7 == 0 :
+                ser.write(b'd')
+            elif sayimiz%11 == 0 :
+                ser.write(b'e')
+            elif sayimiz%13 == 0 :
+                ser.write(b'f')
+            elif sayimiz%17 == 0 :
+                ser.write(b'g')
+            elif sayimiz%19 == 0 :
+                ser.write(b'h')
+            elif sayimiz%23 == 0 :
+                ser.write(b'i')
+            elif sayimiz%29 == 0 :
+                ser.write(b'j')
+            elif sayimiz%31 == 0 :
+                ser.write(b'k')
+            elif sayimiz%37 == 0 :
+                ser.write(b'l')
+            else :
+                pass
+            messagebox.showinfo("BİLGİLENDİRME","GİRDİĞİNİZ SAYILARIN HANGİ ASAL SAYILARA\nBÖLÜNEBİLECEĞİ YANDA GÖSTERİLMİŞTİR")
+            sayi=""
+            ser.write(b'm')
         else :
             pass
 
